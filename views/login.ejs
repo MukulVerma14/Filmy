@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <a href="/" class="go-back" title="Back to home page">
+        <i class="fa-solid fa-less-than" style="color: white;"></i>
+    </a>
+    
+    
+    <div class="cont">
+        <div class="left">
+            <video autoplay muted>
+                <source src="/assets/lsvid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="right">
+            <h1>Welcome Back!</h1>
+            <h2>Sign In with Google</h2>
+            <button class="ggl-btn"><i class="fa-brands fa-google" style="color: #74C0FC;"></i>&nbsp;&nbsp;Sign In using Google</button>
+            <br>
+            <hr>
+            <p>Continue with email address</p>
+            <form class="needs-validation" action="/login" method="POST" novalidate>
+                
+                <div class="input-container">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="text" name="username" class="form-control" placeholder="Username" required>
+                    <div class="invalid-feedback">Please enter your username.</div>
+                </div>
+                <br>
+                
+                <div class="input-container">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                    <div class="invalid-feedback">Please enter your password.</div>
+                </div>
+                <br>
+            
+                <button class="su-btn">Sign In</button>
+            </form>
+            <hr>
+            <p>Don't have an account? <a href="/signup">Create one</a></p>
+            <% if (messages.error) { %>
+                <div class="alert alert-danger"><%= messages.error %></div>
+            <% } %>
+            
+            <% if (messages.success) { %>
+                <div class="alert alert-success"><%= messages.success %></div>
+            <% } %>
+            
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script>
+    (function () {
+        'use strict';
+
+        // Fetch the form element
+        var form = document.querySelector('.needs-validation');
+
+        form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+                event.preventDefault(); // Prevent form submission if invalid
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated'); // Bootstrap validation styling
+        }, false);
+    })();
+</script>
+
+</body> 
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h2>Login to your account</h2>
+            <p>Don't have an account? <a href="/signup">Sign up</a></p>
+            <form action="/login" method="POST">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html> -->

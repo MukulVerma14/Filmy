@@ -1,0 +1,54 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="mb-4">Edit Your Review</h3>
+                    <form action="/movie/<%= movieId %>/review/<%= review._id %>/edit" method="POST">
+                        <div class="mb-3">
+                            <label class="form-label">Rating</label>
+                            <div class="rating-input">
+                                <% for(let i = 5; i >= 1; i--) { %>
+                                    <input type="radio" name="rating" value="<%= i %>" id="star<%= i %>" <%= Number(review.rating) === i ? 'checked' : '' %> required>
+                                    <label for="star<%= i %>">★</label>
+                                <% } %>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="comment" class="form-label">Comment</label>
+                            <textarea class="form-control" id="comment" name="comment" rows="3" required><%= review.comment %></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Review</button>
+                        <a href="/movie/<%= movieId %>" class="btn btn-secondary ms-2">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.rating-input {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+.rating-input input {
+    display: none;
+}
+.rating-input label {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #ddd;
+    padding: 0 0.1em;
+}
+.rating-input input:checked ~ label,
+.rating-input label:hover,
+.rating-input label:hover ~ label {
+    color: #ffd700;
+}
+</style>
+
+<%- include('partials/footer') %> 
