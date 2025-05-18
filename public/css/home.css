@@ -74,6 +74,46 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+.cardImg {
+    height: 20rem;
+}
+
+.card-cont {
+    border-radius: 1rem !important;
+    transition: 0.5s;
+}
+
+.card-cont:hover {
+    scale: 1.05;
+}
+
+.search-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 40px;
+    transition: width 0.4s ease;
+  }
+
+  .search-wrapper.active {
+    width: 200px; /* adjust to your liking */
+  }
+
+  #searchInput {
+    position: absolute;
+    right: 40px;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .search-wrapper.active #searchInput {
+    opacity: 1;
+  }
+
+  #searchBtn {
+    z-index: 2;
+    position: relative;
+  }
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .carousel, .carousel-item img {
