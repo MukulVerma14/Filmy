@@ -30,5 +30,4 @@ Filmy is a web-based social media platform for movie enthusiasts, built as a min
 
 ---
 
-## 📂 Folder Structure
 
